@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "<name-of-package>"
+version = "0.1.0"
+description = ""
+authors = ["STL <sotelab@proton.me>"]
+readme = "README.org"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-decouple = "^3.8"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.30.0"
+pre-commit = "^4.0.1"
+ruff = "^0.8.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["<name-of-package>"]
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "auto"

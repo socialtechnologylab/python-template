@@ -1,0 +1,35 @@
+#+TITLE: README
+#+AUTHOR: STL
+
+* TEMPLATE INSTRUCTIONS
+
+this is a template for new python projects with:
+- poetry for package management
+- python-decouple for env management
+- ruff & pre-commit for linting & formatting
+- ipython because it's good
+
+to create a new project:
+
+#+BEGIN_SRC sh
+export PACKAGE_NAME=name-of-package
+npx degit socialtechnologylab/python-template $PACKAGE_NAME
+cd $PACKAGE_NAME
+sed -i 's/<name-of-package>/'$PACKAGE_NAME'/g' pyproject.toml
+git init
+#+END_SRC
+
+as a final step, remove this =TEMPLATE INSTRUCTIONS= header in the README.org.
+
+(if you need to install =npx=, run =npm install -g npx=.)
+
+* setup
+
+Use a venv in python3.12, install reqs and this package:
+
+#+BEGIN_SRC sh
+mkvirtualenv <name-of-venv> --py=3.12
+workon <name-of-venv>
+poetry install
+pre-commit install
+#+END_SRC
